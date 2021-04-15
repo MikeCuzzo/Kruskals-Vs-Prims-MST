@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/GraphEngine.cpp
+GraphEngine.h
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/GraphEngine.h
+
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/GraphEngine.h
+iostream
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/iostream
+fstream
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/fstream
+
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/main.cpp
+iostream
+-
+GraphEngine.h
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/GraphEngine.h
+
