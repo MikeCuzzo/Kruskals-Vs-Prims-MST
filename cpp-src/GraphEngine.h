@@ -1,0 +1,14 @@
+//
+// Created by mcuzzo on 4/15/21.
+//
+
+#ifndef S21_PA04_MIKECUZZO_GRANTAYERS_GRAPHENGINE_H
+#define S21_PA04_MIKECUZZO_GRANTAYERS_GRAPHENGINE_H
+
+
+class GraphEngine {
+
+};
+
+
+#endif //S21_PA04_MIKECUZZO_GRANTAYERS_GRAPHENGINE_H

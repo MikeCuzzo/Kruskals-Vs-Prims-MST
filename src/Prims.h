@@ -1,0 +1,14 @@
+//
+// Created by mcuzzo on 4/15/21.
+//
+
+#ifndef S21_PA04_MIKECUZZO_GRANTAYERS_PRIMS_H
+#define S21_PA04_MIKECUZZO_GRANTAYERS_PRIMS_H
+
+
+class Prims {
+
+};
+
+
+#endif //S21_PA04_MIKECUZZO_GRANTAYERS_PRIMS_H

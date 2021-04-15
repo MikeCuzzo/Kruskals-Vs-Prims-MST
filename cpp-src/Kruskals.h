@@ -1,0 +1,14 @@
+//
+// Created by mcuzzo on 4/15/21.
+//
+
+#ifndef S21_PA04_MIKECUZZO_GRANTAYERS_KRUSKALS_H
+#define S21_PA04_MIKECUZZO_GRANTAYERS_KRUSKALS_H
+
+
+class Kruskals {
+
+};
+
+
+#endif //S21_PA04_MIKECUZZO_GRANTAYERS_KRUSKALS_H
