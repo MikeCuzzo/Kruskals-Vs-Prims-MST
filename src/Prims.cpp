@@ -3,3 +3,7 @@
 //
 
 #include "Prims.h"
+
+Prims::Prims(adjacency_list<listS, vecS, undirectedS> gr) {
+    g = gr;
+}

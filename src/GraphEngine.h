@@ -7,14 +7,24 @@
 
 #include "iostream"
 #include "fstream"
+#include <boost/graph/adjacency_list.hpp>
+#include "Kruskals.h"
+#include "Prims.h"
+#include <boost/tuple/tuple.hpp>
+#include "chrono"
 
 using namespace std;
+using namespace boost;
+using namespace chrono;
 
 class GraphEngine {
 public:
     GraphEngine();
     void generateGraph();
+    void algTiming();
 private:
+    typedef adjacency_list<listS, vecS, undirectedS> Graph;
+    Graph g;
 };
 
 
