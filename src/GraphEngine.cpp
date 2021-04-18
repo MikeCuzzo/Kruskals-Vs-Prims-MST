@@ -15,21 +15,30 @@ void GraphEngine::generateGraph() {
     for (int n = 2; n < n + 4; n++) {
         // number of edges
         for (int e = 2; e < e + 3; e++) {
-
+            // generates graph from python
             string command = "python3 ../python/creategraph.py " + to_string(n) + " " + to_string(e);
-
             system(command.c_str());
 
             ifstream inFile;
             inFile.open("../data/input.txt");
             // record all input and put it into a graph
+            string buffer;
+            Graph g;
+            while(inFile.good()) {
+                getline(inFile, buffer,':');
+                char edge1 = buffer[buffer.find('(')+1];
+                char edge2 = buffer[buffer.find(')')-1];
+                if(buffer[0] != '{')
+                    add_edge(edge1-48,edge2-48,g);
+            }
+            print_graph(g);
             inFile.close();
-            algTiming();
+            // algTiming();
         }
     }
 }
 
-void GraphEngine::algTiming() {
+void GraphEngine::algTiming(adjacency_list<listS, vecS, undirectedS> g) {
     // times Kruskal's
     int executionTime = 0;
     auto start = std::chrono::high_resolution_clock::now();

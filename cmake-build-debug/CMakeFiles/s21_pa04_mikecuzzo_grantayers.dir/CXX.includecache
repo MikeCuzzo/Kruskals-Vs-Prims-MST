@@ -21,10 +21,10 @@ Kruskals.h
 /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Kruskals.h
 Prims.h
 /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Prims.h
-boost/tuple/tuple.hpp
--
 chrono
 /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/chrono
+boost/graph/graph_utility.hpp
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/boost/graph/graph_utility.hpp
 
 /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Kruskals.h
 boost/graph/adjacency_list.hpp

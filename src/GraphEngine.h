@@ -10,8 +10,8 @@
 #include <boost/graph/adjacency_list.hpp>
 #include "Kruskals.h"
 #include "Prims.h"
-#include <boost/tuple/tuple.hpp>
 #include "chrono"
+#include "boost/graph/graph_utility.hpp"
 
 using namespace std;
 using namespace boost;
@@ -21,10 +21,9 @@ class GraphEngine {
 public:
     GraphEngine();
     void generateGraph();
-    void algTiming();
+    void algTiming(adjacency_list<listS, vecS, undirectedS>);
 private:
     typedef adjacency_list<listS, vecS, undirectedS> Graph;
-    Graph g;
 };
 
 
