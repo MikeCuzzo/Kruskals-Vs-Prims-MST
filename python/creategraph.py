@@ -1,6 +1,12 @@
+import matplotlib.pyplot as plt
 import networkx as nx
+import sys
 
-G = nx.grid_2d_graph(5, 5)  # 5x5 grid
+# records command line arguments
+nodes = int(sys.argv[1])
+edges = int(sys.argv[2])
+
+G = nx.grid_2d_graph(nodes, edges)  # 5x5 grid
 
 # print the adjacency list
 for line in nx.generate_adjlist(G):
