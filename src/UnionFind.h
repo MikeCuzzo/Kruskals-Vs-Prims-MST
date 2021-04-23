@@ -14,11 +14,15 @@ using namespace boost;
 class UnionFind {
 public:
     UnionFind(adjacency_list<listS, vecS, undirectedS>);
+    bool isCycle();
     int find();
-    void getUnion();
+    void Union();
 private:
     typedef adjacency_list<listS, vecS, undirectedS> Graph;
     Graph g;
+    typedef Graph::edge_descriptor Edge;
+    typedef graph_traits<Graph>::vertex_descriptor Vertex;
+    vector<boost::tuple<int,int>> subsets;
 };
 
 
