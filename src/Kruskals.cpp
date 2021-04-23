@@ -7,3 +7,7 @@
 Kruskals::Kruskals(adjacency_list<listS, vecS, undirectedS> gr) {
     g = gr;
 }
+
+int Kruskals::kruskalMST() {
+
+}

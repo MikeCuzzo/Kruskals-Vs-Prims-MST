@@ -13,6 +13,7 @@ using namespace boost;
 class Prims {
 public:
     Prims(adjacency_list<listS, vecS, undirectedS>);
+    void primMST();
 private:
     typedef adjacency_list<listS, vecS, undirectedS> Graph;
     Graph g;

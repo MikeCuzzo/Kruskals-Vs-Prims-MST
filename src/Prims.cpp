@@ -7,3 +7,7 @@
 Prims::Prims(adjacency_list<listS, vecS, undirectedS> gr) {
     g = gr;
 }
+
+void Prims::primMST() {
+
+}

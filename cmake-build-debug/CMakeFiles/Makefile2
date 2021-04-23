@@ -93,12 +93,12 @@ clean: CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/clean
 CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/build.make CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/build.make CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target s21_pa04_mikecuzzo_grantayers"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target s21_pa04_mikecuzzo_grantayers"
 .PHONY : CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/rule

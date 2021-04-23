@@ -223,6 +223,33 @@ src/Prims.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/build.make CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/Prims.cpp.s
 .PHONY : src/Prims.cpp.s
 
+src/UnionFind.o: src/UnionFind.cpp.o
+
+.PHONY : src/UnionFind.o
+
+# target to build an object file
+src/UnionFind.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/build.make CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/UnionFind.cpp.o
+.PHONY : src/UnionFind.cpp.o
+
+src/UnionFind.i: src/UnionFind.cpp.i
+
+.PHONY : src/UnionFind.i
+
+# target to preprocess a source file
+src/UnionFind.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/build.make CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/UnionFind.cpp.i
+.PHONY : src/UnionFind.cpp.i
+
+src/UnionFind.s: src/UnionFind.cpp.s
+
+.PHONY : src/UnionFind.s
+
+# target to generate assembly for a file
+src/UnionFind.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/build.make CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/UnionFind.cpp.s
+.PHONY : src/UnionFind.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -268,6 +295,9 @@ help:
 	@echo "... src/Prims.o"
 	@echo "... src/Prims.i"
 	@echo "... src/Prims.s"
+	@echo "... src/UnionFind.o"
+	@echo "... src/UnionFind.i"
+	@echo "... src/UnionFind.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

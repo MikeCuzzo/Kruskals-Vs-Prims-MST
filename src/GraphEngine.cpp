@@ -16,6 +16,8 @@ void GraphEngine::generateGraph() {
         // number of edges
         for (int e = 2; e < e + 3; e++) {
             // generates graph from python
+            // going to need to import a pythong library
+            // this only works on my machine and probably not the grader's
             string command = "python3 ../python/creategraph.py " + to_string(n) + " " + to_string(e);
             system(command.c_str());
 

@@ -102,6 +102,12 @@
 		<Unit filename="/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Prims.h">
 			<Option target="s21_pa04_mikecuzzo_grantayers"/>
 		</Unit>
+		<Unit filename="/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/UnionFind.cpp">
+			<Option target="s21_pa04_mikecuzzo_grantayers"/>
+		</Unit>
+		<Unit filename="/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/UnionFind.h">
+			<Option target="s21_pa04_mikecuzzo_grantayers"/>
+		</Unit>
 		<Unit filename="/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/main.cpp">
 			<Option target="s21_pa04_mikecuzzo_grantayers"/>
 		</Unit>

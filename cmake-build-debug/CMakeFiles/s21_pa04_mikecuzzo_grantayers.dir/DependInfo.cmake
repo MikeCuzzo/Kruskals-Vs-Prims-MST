@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/GraphEngine.cpp" "/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/cmake-build-debug/CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/GraphEngine.cpp.o"
   "/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Kruskals.cpp" "/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/cmake-build-debug/CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/Kruskals.cpp.o"
   "/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Prims.cpp" "/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/cmake-build-debug/CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/Prims.cpp.o"
+  "/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/UnionFind.cpp" "/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/cmake-build-debug/CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/UnionFind.cpp.o"
   "/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/main.cpp" "/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/cmake-build-debug/CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
