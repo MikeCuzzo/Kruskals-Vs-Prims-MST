@@ -6,6 +6,9 @@
 #define S21_PA04_MIKECUZZO_GRANTAYERS_KRUSKALS_H
 
 #include <boost/graph/adjacency_list.hpp>
+#include "UnionFind.h"
+#include "iostream"
+#include "vector"
 
 using namespace std;
 using namespace boost;
@@ -15,9 +18,13 @@ class Kruskals {
 public:
     Kruskals(adjacency_list<listS, vecS, undirectedS>);
     int kruskalMST();
+    void getDisjointSets();
 private:
     typedef adjacency_list<listS, vecS, undirectedS> Graph;
     Graph g;
+    // first int is parent, second is rank
+    vector<boost::tuple <int,int>> DisjointSets;
+    int V;
 };
 
 

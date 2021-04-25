@@ -29,8 +29,22 @@ boost/graph/graph_utility.hpp
 /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Kruskals.h
 boost/graph/adjacency_list.hpp
 -
+UnionFind.h
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/UnionFind.h
+iostream
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/iostream
+vector
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/vector
 
 /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Prims.h
+boost/graph/adjacency_list.hpp
+-
+iostream
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/iostream
+vector
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/vector
+
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/UnionFind.h
 boost/graph/adjacency_list.hpp
 -
 

@@ -48,6 +48,8 @@ void GraphEngine::algTiming(adjacency_list<listS, vecS, undirectedS> g) {
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     executionTime = duration.count();
+    cout << "Kruskal's with " << num_vertices(g) << " verticies and _ density: " <<
+    executionTime << " microseconds" << endl;
 
     // times Prim's
     executionTime = 0;
@@ -56,4 +58,6 @@ void GraphEngine::algTiming(adjacency_list<listS, vecS, undirectedS> g) {
     stop = std::chrono::high_resolution_clock::now();
     duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     executionTime = duration.count();
+    cout << "Prim's with " << num_vertices(g) << " verticies and _ density: " <<
+         executionTime << " microseconds" << endl;
 }
