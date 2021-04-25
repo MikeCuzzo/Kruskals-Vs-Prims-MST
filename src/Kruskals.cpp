@@ -52,3 +52,11 @@ int Kruskals::kruskalMST() {
 
     return mst_wt;
 }
+
+// A utility function to print the
+// constructed MST stored in parent[]
+void Kruskals::printMST(vector<int> parent) {
+    cout <<"Edge \tWeight\n";
+    for (int i = 1; i < V; i++)
+        cout <<parent[i]<<" - "<<i<<" \t"<< edge(i,parent[i],g).second <<" \n";
+}

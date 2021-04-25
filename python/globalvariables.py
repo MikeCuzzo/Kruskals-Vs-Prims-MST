@@ -15,7 +15,7 @@ class global_variables:
         current_absolute_path = os.path.dirname(__file__)
 
         # This is the relative path from the python file to the global variable file
-        global_variable_relative_path = "../Data/Global-Variables.txt"
+        global_variable_relative_path = "../data/Global-Variables.txt"
 
         # This is the absolute path from the python file to the global variable file
         global_variable_absolute_path = os.path.join(current_absolute_path, global_variable_relative_path)

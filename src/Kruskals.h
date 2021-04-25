@@ -18,6 +18,7 @@ class Kruskals {
 public:
     Kruskals(adjacency_list<listS, vecS, undirectedS>);
     int kruskalMST();
+    void printMST(vector<int>);
 private:
     typedef adjacency_list<listS, vecS, undirectedS> Graph;
     Graph g;
