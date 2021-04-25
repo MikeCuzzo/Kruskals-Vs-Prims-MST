@@ -13,16 +13,13 @@ using namespace boost;
 
 class UnionFind {
 public:
-    UnionFind(adjacency_list<listS, vecS, undirectedS>);
-    bool isCycle();
-    int find();
-    void Union();
+    UnionFind(int);
+    int find(int);
+    void Union(int,int);
+
 private:
-    typedef adjacency_list<listS, vecS, undirectedS> Graph;
-    Graph g;
-    typedef Graph::edge_descriptor Edge;
-    typedef graph_traits<Graph>::vertex_descriptor Vertex;
-    vector<boost::tuple<int,int>> subsets;
+    vector<int> parent;
+    vector<int> rnk;
 };
 
 

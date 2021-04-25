@@ -26,6 +26,10 @@ chrono
 boost/graph/graph_utility.hpp
 /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/boost/graph/graph_utility.hpp
 
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Kruskals.cpp
+Kruskals.h
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Kruskals.h
+
 /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Kruskals.h
 boost/graph/adjacency_list.hpp
 -
@@ -36,6 +40,10 @@ iostream
 vector
 /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/vector
 
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Prims.cpp
+Prims.h
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Prims.h
+
 /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/Prims.h
 boost/graph/adjacency_list.hpp
 -
@@ -44,7 +52,17 @@ iostream
 vector
 /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/vector
 
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/UnionFind.cpp
+UnionFind.h
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/UnionFind.h
+
 /home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/UnionFind.h
 boost/graph/adjacency_list.hpp
 -
+
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/main.cpp
+iostream
+-
+GraphEngine.h
+/home/mcuzzo/Desktop/s21-pa04-mikecuzzo_grantayers/src/GraphEngine.h
 
