@@ -7,6 +7,7 @@
 Kruskals::Kruskals(adjacency_list<listS, vecS, undirectedS> gr) {
     g = gr;
     V = num_vertices(g);
+    cout << "Edges of Kruskal's MST are:" << endl;
     kruskalMST();
 }
 
@@ -16,9 +17,6 @@ int Kruskals::kruskalMST() {
 
     //Initialize UnionFind class
     UnionFind uf = UnionFind(num_vertices(g));
-
-//    // Sort edges in increasing order on basis of cost
-//    sort(edges.begin(), edges.end());
 
 
     // Iterate through all  edges
@@ -51,12 +49,4 @@ int Kruskals::kruskalMST() {
     }
 
     return mst_wt;
-}
-
-// A utility function to print the
-// constructed MST stored in parent[]
-void Kruskals::printMST(vector<int> parent) {
-    cout <<"Edge \tWeight\n";
-    for (int i = 1; i < V; i++)
-        cout <<parent[i]<<" - "<<i<<" \t"<< edge(i,parent[i],g).second <<" \n";
 }

@@ -16,13 +16,19 @@ class Prims {
 public:
     Prims(adjacency_list<listS, vecS, undirectedS>);
     void primMST();
-    int minKey(vector<int>, vector<bool>);
-    void printMST(vector<int>);
+    int minKey();
+    void printMST();
 private:
     typedef adjacency_list<listS, vecS, undirectedS> Graph;
     typedef Graph::edge_descriptor Edge;
     Graph g;
     int V;
+    // Vector to store constructed MST
+    vector<int> parent;
+    // Key values used to pick minimum weight edge in cut
+    vector<int> key;
+    // To represent set of vertices included in MST
+    vector<bool> mstSet;
 };
 
 

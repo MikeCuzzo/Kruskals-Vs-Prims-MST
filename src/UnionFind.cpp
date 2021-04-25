@@ -11,10 +11,10 @@ UnionFind::UnionFind(int n) {
     // different sets and have rank 0.
     for (int i = 0; i <= n; i++)
     {
-        rnk[i] = 0;
+        rnk.push_back(0);
 
         //every element is parent of itself
-        parent[i] = i;
+        parent.push_back(i);
     }
 }
 

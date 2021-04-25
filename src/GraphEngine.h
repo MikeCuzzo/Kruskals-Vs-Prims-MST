@@ -12,6 +12,7 @@
 #include "Prims.h"
 #include "chrono"
 #include "boost/graph/graph_utility.hpp"
+#include "Python.h"
 
 using namespace std;
 using namespace boost;

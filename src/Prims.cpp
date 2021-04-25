@@ -10,19 +10,14 @@
 Prims::Prims(adjacency_list<listS, vecS, undirectedS> gr) {
     g = gr;
     V = num_vertices(g);
+
+    parent.reserve(V);
+    key.reserve(V);
+    mstSet.reserve(V);
     primMST();
 }
 
 void Prims::primMST() {
-    // Array to store constructed MST
-    vector<int> parent;
-
-    // Key values used to pick minimum weight edge in cut
-    vector<int> key;
-
-    // To represent set of vertices included in MST
-    vector<bool> mstSet;
-
     // Initialize all keys as INFINITE
     for (int i = 0; i < V; i++)
         key[i] = INT_MAX, mstSet[i] = false;
@@ -38,7 +33,7 @@ void Prims::primMST() {
     {
         // Pick the minimum key vertex from the
         // set of vertices not yet included in MST
-        int u = minKey(key, mstSet);
+        int u = minKey();
 
         // Add the picked vertex to the MST Set
         mstSet[u] = true;
@@ -58,13 +53,13 @@ void Prims::primMST() {
     }
 
     // print the constructed MST
-    printMST(parent);
+    printMST();
 }
 
 // A utility function to find the vertex with
 // minimum key value, from the set of vertices
 // not yet included in MST
-int Prims::minKey(vector<int> key, vector<bool> mstSet) {
+int Prims::minKey() {
     // Initialize min value
     int min = INT_MAX, min_index;
 
@@ -77,8 +72,8 @@ int Prims::minKey(vector<int> key, vector<bool> mstSet) {
 
 // A utility function to print the
 // constructed MST stored in parent[]
-void Prims::printMST(vector<int> parent) {
-    cout <<"Edge \tWeight\n";
+void Prims::printMST() {
+    cout <<"Edges of Prim's MST are:" << endl;
     for (int i = 1; i < V; i++)
-        cout <<parent[i]<<" - "<<i<<" \t"<< edge(i,parent[i],g).second <<" \n";
+        cout << parent[i] << " - " << i << endl;
 }

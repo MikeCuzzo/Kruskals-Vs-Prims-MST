@@ -6,6 +6,7 @@ import os
 
 class global_variables:
     def __init__(self):
+
         # Declaring the list that will store the values for nodes and edges
         self.nodes = list()
         self.densities = list()
@@ -15,7 +16,7 @@ class global_variables:
         current_absolute_path = os.path.dirname(__file__)
 
         # This is the relative path from the python file to the global variable file
-        global_variable_relative_path = "../data/Global-Variables.txt"
+        global_variable_relative_path = "../data/graph/rsc/generation-rules.txt"
 
         # This is the absolute path from the python file to the global variable file
         global_variable_absolute_path = os.path.join(current_absolute_path, global_variable_relative_path)
@@ -38,8 +39,8 @@ class global_variables:
                 if '-Density' in variable:
                     self.densities.append(int(variable[variable.index(' '): len(variable)]))
 
-    def get_nodes(self):
+    def get_list_of_nodes(self):
         return self.nodes
 
-    def get_densities(self): 
+    def get_list_of_densities(self): 
         return self.densities
