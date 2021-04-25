@@ -10,34 +10,28 @@ GraphEngine::GraphEngine() {
 
 void GraphEngine::generateGraph() {
     //runs python script to create graph in a file
+    Py_Initialize();
 
-    // number of nodes
-    for (int n = 2; n < n + 4; n++) {
-        // number of edges
-        for (int e = 2; e < e + 3; e++) {
-            // generates graph from python
-            // going to need to import a pythong library
-            // this only works on my machine and probably not the grader's
-            string command = "python3 ../python/creategraph.py " + to_string(n) + " " + to_string(e);
-            system(command.c_str());
+    PyRun_SimpleString("python3 ./python/creategraph.py");
 
-            ifstream inFile;
-            inFile.open("../data/input.txt");
-            // record all input and put it into a graph
-            string buffer;
-            Graph g;
-            while(inFile.good()) {
-                getline(inFile, buffer,':');
-                char edge1 = buffer[buffer.find('(')+1];
-                char edge2 = buffer[buffer.find(')')-1];
-                if(buffer[0] != '{')
-                    add_edge(edge1-48,edge2-48,g);
-            }
-            print_graph(g);
-            inFile.close();
-            // algTiming();
-        }
+    Py_Finalize();
+
+
+    ifstream inFile;
+    inFile.open("../data/input.txt");
+    // record all input and put it into a graph
+    string buffer;
+    Graph g;
+    while(inFile.good()) {
+        getline(inFile, buffer,':');
+        char edge1 = buffer[buffer.find('(')+1];
+        char edge2 = buffer[buffer.find(')')-1];
+        if(buffer[0] != '{')
+            add_edge(edge1-48,edge2-48,g);
     }
+    print_graph(g);
+    inFile.close();
+            // algTiming();
 }
 
 void GraphEngine::algTiming(adjacency_list<listS, vecS, undirectedS> g) {

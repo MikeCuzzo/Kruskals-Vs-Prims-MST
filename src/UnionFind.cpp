@@ -9,7 +9,7 @@ UnionFind::UnionFind(adjacency_list<listS, vecS, undirectedS> gr) {
 }
 
 int UnionFind::find() {
-
+    return 1;
 }
 
 void UnionFind::getUnion() {

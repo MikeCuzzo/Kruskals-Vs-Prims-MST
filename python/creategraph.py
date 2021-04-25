@@ -5,6 +5,7 @@ import networkx as nx
 from itertools import combinations, permutations
 import random
 import sys
+import shutil
 import os
 
 class create_graphs:
@@ -16,19 +17,24 @@ class create_graphs:
         # Creating the list to hold the graphs
         self.Graphs = list()
 
-        for i in range(0, len(self.Global.get_nodes())):
-            self.Graphs.append(self.generate_graph(self.Global.get_nodes()[i], self.Global.get_densities()[i]))
+        # Creating nodes and density from the global variables class
+        self.nodes = self.Global.get_list_of_nodes()
+        self.density = self.Global.get_list_of_densities()
 
-        i = 0
-        for graph in self.Graphs:
-            nx.draw(graph)
-            plt.savefig("../Data/graph" + str(i) + ".png")
-            i += 1
-        
+        self.graph_stats_iterator = 1
+
+        # Fills the graph lists with data from all the graph
+        for i in range(0, min(len(self.nodes), len(self.density))):
+            self.Graphs.append(self.generate_graph(self.nodes[i], self.density[i]))
+
+        # Generate the text file and image files for each graph
         self.generate_graph_data()
+        self.generate_graph_visualization()
 
 
+    # Creates the graph, ensuring that it is fully connected and as close to the density as possible
     def generate_graph(self, number_of_nodes, density):
+        
         # Creating the list of nodes
         nodes = list(range(0, number_of_nodes))
 
@@ -50,9 +56,21 @@ class create_graphs:
             
             # Checking if the graph is at the proper density
             if achieved_density >= float(density/100):
-                print("Total possible Edges: " + str(total_possible_edges) + 
-                      "\nNumber of Edges: " + str(G.number_of_edges()) + 
-                      "\nActual Density: " + str(float(100*(G.number_of_edges())/total_possible_edges)) + "\n" )
+
+                # Creating the stats string to be added to a file
+                output = ("Total possible Edges: " + str(total_possible_edges) +
+                         "\nNumber of Edges: " + str(G.number_of_edges()) + 
+                         "\nActual Density: " + str(float(100*(G.number_of_edges())/total_possible_edges)) + "%\n")
+
+                # Printing the stats about the completed graph
+                with open("../data/graph/rsc/generated-graph-stats-" + str(self.graph_stats_iterator) + ".txt", "w") as file:
+                    file.write(output)
+                
+                # Incrementing the graph stats iterator
+                self.graph_stats_iterator += 1
+                
+
+                # Returning the completed graph
                 return G
 
             if i == len(possible_edges)-1:
@@ -74,7 +92,6 @@ class create_graphs:
         G = nx.Graph()
         i = 0
         while i != len(nodes)-1:
-            print(str(i) + ", " + str(i+1))
             G.add_edge(i, i+1)
             i+=1
         
@@ -84,7 +101,7 @@ class create_graphs:
     def generate_graph_data(self):
         i = 0
         for graph in self.Graphs:
-            with open("../data/graph" + str(i) + ".txt", "w") as file:
+            with open("../data/graph/text/graph" + str(i) + ".txt", "w") as file:
                 output = str(graph.edges())
                 output = output.replace(", (", "\n(")
                 output = output.replace('[', '')
@@ -92,6 +109,21 @@ class create_graphs:
                 file.write(str(graph.number_of_edges())+ "\n")
                 file.write(output)
             i+=1
+    
+    def generate_graph_visualization(self):
+        i = 0
+        for root, dirs, files in os.walk('../data/graph/images/'):
+                for f in files:
+                    os.unlink(os.path.join(root, f))
+                for d in dirs:
+                    shutil.rmtree(os.path.join(root, d))
+                    
+        for graph in self.Graphs:
+            nx.draw(graph, with_labels=True)
+            plt.savefig("../data/graph/images/graph_visualization" + str(i) + ".png")
+            plt.close()
+            i += 1
+
 
 
 if __name__ == "__main__":

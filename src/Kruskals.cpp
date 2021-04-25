@@ -9,5 +9,5 @@ Kruskals::Kruskals(adjacency_list<listS, vecS, undirectedS> gr) {
 }
 
 int Kruskals::kruskalMST() {
-
+    return 1;
 }

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/src/Kruskals.cpp
+Kruskals.h
+/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/src/Kruskals.h
+
+/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/src/Kruskals.h
+boost/graph/adjacency_list.hpp
+-
+
