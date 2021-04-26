@@ -1,0 +1,59 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.19"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "s21_pa04_mikecuzzo_grantayers",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "s21_pa04_mikecuzzo_grantayers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-s21_pa04_mikecuzzo_grantayers-Debug-ecf473fe6d03927ae49b.json",
+					"name" : "s21_pa04_mikecuzzo_grantayers",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/build",
+		"source" : "/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

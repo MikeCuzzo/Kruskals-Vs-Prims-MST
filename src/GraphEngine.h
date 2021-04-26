@@ -7,12 +7,14 @@
 
 #include "iostream"
 #include "fstream"
+#include <stdio.h>
 #include <boost/graph/adjacency_list.hpp>
 #include "Kruskals.h"
 #include "Prims.h"
 #include "chrono"
 #include "boost/graph/graph_utility.hpp"
 #include "Python.h"
+#include <filesystem>
 
 using namespace std;
 using namespace boost;
@@ -25,6 +27,8 @@ public:
     void algTiming(adjacency_list<listS, vecS, undirectedS>);
 private:
     typedef adjacency_list<listS, vecS, undirectedS> Graph;
+    void createGraphs();
+    void recordStats(int nodes, int edges, int kruskal, int prim);
 };
 
 

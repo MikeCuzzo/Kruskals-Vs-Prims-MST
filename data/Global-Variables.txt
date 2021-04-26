@@ -1,9 +1,0 @@
-Graph-1-Nodes: 10
-Graph-1-Density: 40
-Graph-2-Nodes: 20
-Graph-2-Density: 10
-Graph-3-Nodes: 30
-Graph-3-Density: 10
-Graph-4-Nodes: 40
-Graph-4-Density: 100
-
