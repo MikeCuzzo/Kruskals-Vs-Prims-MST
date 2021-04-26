@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9  -I/usr/include/python3.8 -g -std=gnu++17 -o CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/main.cpp.o -c /mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/src/main.cpp",
+  "file": "/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/src/main.cpp"
+},
+{
+  "directory": "/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9  -I/usr/include/python3.8 -g -std=gnu++17 -o CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/Prims.cpp.o -c /mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/src/Prims.cpp",
+  "file": "/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/src/Prims.cpp"
+},
+{
+  "directory": "/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9  -I/usr/include/python3.8 -g -std=gnu++17 -o CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/Kruskals.cpp.o -c /mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/src/Kruskals.cpp",
+  "file": "/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/src/Kruskals.cpp"
+},
+{
+  "directory": "/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9  -I/usr/include/python3.8 -g -std=gnu++17 -o CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/GraphEngine.cpp.o -c /mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/src/GraphEngine.cpp",
+  "file": "/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/src/GraphEngine.cpp"
+},
+{
+  "directory": "/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9  -I/usr/include/python3.8 -g -std=gnu++17 -o CMakeFiles/s21_pa04_mikecuzzo_grantayers.dir/src/UnionFind.cpp.o -c /mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/src/UnionFind.cpp",
+  "file": "/mnt/c/Users/12816/Documents/School/Junior-Year/Spring-2021/CS-3353/Project4/s21-pa04-mikecuzzo_grantayers/src/UnionFind.cpp"
+}
+]
