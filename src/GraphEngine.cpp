@@ -4,7 +4,9 @@
 
 #include "GraphEngine.h"
 
-GraphEngine::GraphEngine() {
+GraphEngine::GraphEngine(char** argv) {
+    flag = argv[1];
+    absolutePath = argv[2];
     generateGraph();
 }
 
