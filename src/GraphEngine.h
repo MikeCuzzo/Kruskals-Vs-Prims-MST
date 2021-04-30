@@ -22,15 +22,16 @@ using namespace chrono;
 
 class GraphEngine {
 public:
-    GraphEngine(char**);
+    GraphEngine(int,char**);
     void generateGraph();
+    adjacency_list<listS, vecS, undirectedS>  readFile(string);
     void algTiming(adjacency_list<listS, vecS, undirectedS>);
 private:
     typedef adjacency_list<listS, vecS, undirectedS> Graph;
     void createGraphs();
     void recordStats(int nodes, int edges, int kruskal, int prim);
     string flag;
-    string absolutePath;
+    string path;
 };
 
 

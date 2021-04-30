@@ -4,28 +4,27 @@
 
 #include "GraphEngine.h"
 
-GraphEngine::GraphEngine(char** argv) {
-    flag = argv[1];
-    absolutePath = argv[2];
+GraphEngine::GraphEngine(int argc, char **argv) {
+    if (argc > 1) {
+        flag = argv[1];
+        path = argv[2];
+    } else {
+        path = "../data/graph/text/";
+        // Runs Python file
+        createGraphs();
+    }
     generateGraph();
 }
 
 void GraphEngine::generateGraph() {
-
-    // Running Python file
-    createGraphs();    
-
     // Getting the number of graphs from the data section
     using filesystem::directory_iterator;
-    int count = std::distance(directory_iterator("../data/graph/text/"), directory_iterator{});
-   
-
+    int count = std::distance(directory_iterator(path), directory_iterator{});
     ifstream inFile;
 
-    for (int i = 0; i < count; i++){
+    for (int i = 0; i < count; i++) {
         //Create the path to the first graph
         string path = "../data/graph/text/graph" + to_string(i) + ".txt";
-        
         // Open the path
         inFile.open(path.c_str());
 
@@ -36,8 +35,8 @@ void GraphEngine::generateGraph() {
         int size = stoi(buffer);
         for (int i = 0; i < size; i++) {
             getline(inFile, buffer, '\n');
-            string edge1 = buffer.substr(buffer.find('(')+1, buffer.find(',')-1);
-            string edge2 = buffer.substr(buffer.find(',')+2, buffer.length() - 2);
+            string edge1 = buffer.substr(buffer.find('(') + 1, buffer.find(',') - 1);
+            string edge2 = buffer.substr(buffer.find(',') + 2, buffer.length() - 2);
             add_edge(stoi(edge1), stoi(edge2), g);
         }
         inFile.close();
@@ -54,7 +53,7 @@ void GraphEngine::algTiming(adjacency_list<listS, vecS, undirectedS> g) {
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     kruskalTime = duration.count();
     cout << "Kruskal's with " << num_vertices(g) << " verticies and " << num_edges(g) << " edges: " <<
-    kruskalTime << " microseconds" << endl;
+         kruskalTime << " microseconds" << endl;
 
     // times Prim's
     int primTime = 0;
@@ -71,24 +70,24 @@ void GraphEngine::algTiming(adjacency_list<listS, vecS, undirectedS> g) {
 }
 
 
-void GraphEngine::createGraphs(){
-     //runs python script to create graph in a file
+void GraphEngine::createGraphs() {
+    //runs python script to create graph in a file
     Py_Initialize();
     PyRun_SimpleString("import sys");
-    PyRun_SimpleString("sys.path.append('../python')");  
+    PyRun_SimpleString("sys.path.append('../python')");
 
     PyObject *obj = Py_BuildValue("s", "../python/creategraph.py");
     FILE *file = _Py_fopen_obj(obj, "r+");
-    if(file != NULL) {
+    if (file != NULL) {
         PyRun_SimpleFile(file, "creategraph.py");
     }
     Py_Finalize();
 }
 
 
-    void GraphEngine::recordStats(int nodes, int edges, int kruskal, int prim){
-        ofstream File_Writer;
-        File_Writer.open("../data/timing/stats.csv", ios::app);
-        File_Writer << nodes << "," << edges << "," << kruskal << "," << prim << "\n";
-        File_Writer.close();
-    }
+void GraphEngine::recordStats(int nodes, int edges, int kruskal, int prim) {
+    ofstream File_Writer;
+    File_Writer.open("../data/timing/stats.csv", ios::app);
+    File_Writer << nodes << "," << edges << "," << kruskal << "," << prim << "\n";
+    File_Writer.close();
+}
