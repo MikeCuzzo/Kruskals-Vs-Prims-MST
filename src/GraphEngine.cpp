@@ -11,7 +11,7 @@ GraphEngine::GraphEngine(int argc, char **argv) {
     } else {
         path = "../data/graph/text/";
         // Runs Python file
-        createGraphs();
+        // createGraphs();
     }
     generateGraph();
 }
@@ -19,32 +19,36 @@ GraphEngine::GraphEngine(int argc, char **argv) {
 void GraphEngine::generateGraph() {
     // Getting the number of graphs from the data section
     using filesystem::directory_iterator;
-    int count = std::distance(directory_iterator(path), directory_iterator{});
     ifstream inFile;
 
-    for (int i = 0; i < count; i++) {
-        //Create the path to the first graph
-        string path = "../data/graph/text/graph" + to_string(i) + ".txt";
+       for(auto& i: directory_iterator(path)) {
+        // Create the path to the first graph
         // Open the path
-        inFile.open(path.c_str());
+        inFile.open(i.path());
 
         // record all input and put it into a graph
         string buffer = "";
+        getline(inFile, buffer, '\n');
         Graph g;
-        getline(inFile, buffer);
-        int size = stoi(buffer);
-        for (int i = 0; i < size; i++) {
+        while(inFile.good()) {
+            getline(inFile, buffer, ' ');
+            string edge1 = buffer;
+            getline(inFile, buffer, ' ');
+            string edge2 = buffer;
             getline(inFile, buffer, '\n');
-            string edge1 = buffer.substr(buffer.find('(') + 1, buffer.find(',') - 1);
-            string edge2 = buffer.substr(buffer.find(',') + 2, buffer.length() - 2);
-            add_edge(stoi(edge1), stoi(edge2), g);
+            string weight = buffer.substr(0,buffer.size()-1);
+
+            if(edge1 != "")
+                add_edge(stoi(edge1), stoi(edge2), stoi(weight), g);
+            else
+                break;
         }
         inFile.close();
         algTiming(g);
     }
 }
 
-void GraphEngine::algTiming(adjacency_list<listS, vecS, undirectedS> g) {
+void GraphEngine::algTiming(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>> g) {
     // times Kruskal's
     int kruskalTime = 0;
     auto start = std::chrono::high_resolution_clock::now();

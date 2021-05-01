@@ -16,10 +16,11 @@ using namespace boost;
 
 class Kruskals {
 public:
-    Kruskals(adjacency_list<listS, vecS, undirectedS>);
+    Kruskals(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>>);
     int kruskalMST();
 private:
-    typedef adjacency_list<listS, vecS, undirectedS> Graph;
+    typedef property<edge_weight_t, int> EdgeWeightProperty;
+    typedef adjacency_list<listS, vecS,undirectedS,no_property,EdgeWeightProperty> Graph;
     Graph g;
     // first int is parent, second is rank
     vector<boost::tuple <int,int>> DisjointSets;

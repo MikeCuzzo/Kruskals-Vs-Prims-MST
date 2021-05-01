@@ -4,7 +4,7 @@
 
 #include "Kruskals.h"
 
-Kruskals::Kruskals(adjacency_list<listS, vecS, undirectedS> gr) {
+Kruskals::Kruskals(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>> gr) {
     g = gr;
     V = num_vertices(g);
     cout << "Edges of Kruskal's MST are:" << endl;

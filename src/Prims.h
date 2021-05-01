@@ -14,12 +14,13 @@ using namespace boost;
 
 class Prims {
 public:
-    Prims(adjacency_list<listS, vecS, undirectedS>);
+    Prims(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>>);
     void primMST();
     int minKey();
     void printMST();
 private:
-    typedef adjacency_list<listS, vecS, undirectedS> Graph;
+    typedef property<boost::edge_weight_t, int> EdgeWeightProperty;
+    typedef adjacency_list<listS, vecS,undirectedS,no_property,EdgeWeightProperty> Graph;
     typedef Graph::edge_descriptor Edge;
     Graph g;
     int V;

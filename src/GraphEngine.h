@@ -25,9 +25,10 @@ public:
     GraphEngine(int,char**);
     void generateGraph();
     adjacency_list<listS, vecS, undirectedS>  readFile(string);
-    void algTiming(adjacency_list<listS, vecS, undirectedS>);
+    void algTiming(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>>);
 private:
-    typedef adjacency_list<listS, vecS, undirectedS> Graph;
+    typedef boost::property<boost::edge_weight_t, int> EdgeWeightProperty;
+    typedef boost::adjacency_list<listS, vecS,undirectedS,no_property,EdgeWeightProperty> Graph;
     void createGraphs();
     void recordStats(int nodes, int edges, int kruskal, int prim);
     string flag;

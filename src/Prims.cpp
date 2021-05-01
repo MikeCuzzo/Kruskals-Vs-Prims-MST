@@ -7,7 +7,7 @@
 // implementation referenced from geeksforgeeks
 
 
-Prims::Prims(adjacency_list<listS, vecS, undirectedS> gr) {
+Prims::Prims(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>> gr) {
     g = gr;
     V = num_vertices(g);
 
