@@ -19,8 +19,10 @@ Prims::Prims(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_we
 
 void Prims::primMST() {
     // Initialize all keys as INFINITE
-    for (int i = 0; i < V; i++)
-        key[i] = INT_MAX, mstSet[i] = false;
+    for (int i = 0; i < V; i++) {
+        key[i] = INT_MAX;
+        mstSet[i] = false;
+    }
 
     // Always include first 1st vertex in MST.
     // Make key 0 so that this vertex is picked as first vertex.
@@ -61,11 +63,15 @@ void Prims::primMST() {
 // not yet included in MST
 int Prims::minKey() {
     // Initialize min value
-    int min = INT_MAX, min_index;
+    int min = INT_MAX;
+    int min_index = 0;
 
-    for (int v = 0; v < V; v++)
-        if (mstSet[v] == false && key[v] < min)
-            min = key[v], min_index = v;
+    for (int v = 0; v < V; v++) {
+        if (mstSet[v] == false && key[v] < min) {
+            min = key[v];
+            min_index = v;
+        }
+    }
 
     return min_index;
 }

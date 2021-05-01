@@ -8,6 +8,7 @@
 #include <boost/graph/adjacency_list.hpp>
 #include "iostream"
 #include "vector"
+#include "boost/graph/graph_utility.hpp"
 
 using namespace std;
 using namespace boost;

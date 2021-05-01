@@ -8,7 +8,8 @@ Kruskals::Kruskals(adjacency_list<listS, vecS,undirectedS,no_property,property<e
     g = gr;
     V = num_vertices(g);
     cout << "Edges of Kruskal's MST are:" << endl;
-    kruskalMST();
+    int weight = kruskalMST();
+    cout << "Weight of Kruskals MST is " << weight << endl;
 }
 
 int Kruskals::kruskalMST() {
