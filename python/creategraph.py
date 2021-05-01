@@ -81,7 +81,7 @@ class create_graphs:
 
             # Check if this edge is added
             if r < density:
-                G.add_edge(possible_edges[i][0], possible_edges[i][1], weight=random.randint(50000, 999999))
+                G.add_edge(possible_edges[i][0], possible_edges[i][1], weight=random.randint(0, 999999))
                 possible_edges.remove(possible_edges[i])
                 i-=1
             
@@ -92,7 +92,7 @@ class create_graphs:
         G = nx.Graph()
         i = 0
         while i != len(nodes)-1:
-            G.add_edge(i, i+1, weight=random.randint(50000, 999999))       
+            G.add_edge(i, i+1, weight=random.randint(0, 999999))       
             i+=1
         
         return G
