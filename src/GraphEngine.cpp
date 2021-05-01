@@ -11,7 +11,7 @@ GraphEngine::GraphEngine(int argc, char **argv) {
     } else {
         path = "../data/graph/text/";
         // Runs Python file
-        // createGraphs();
+        createGraphs();
     }
     generateGraph();
 }
