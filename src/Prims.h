@@ -28,9 +28,8 @@ private:
     // Vector to store constructed MST
     vector<int> parent;
     // Key values used to pick minimum weight edge in cut
-    vector<int> key;
-    // To represent set of vertices included in MST
-    vector<bool> mstSet;
+    // second value is to represent set of vertices included in MST
+    vector<boost::tuple<int,bool>> key;
 };
 
 

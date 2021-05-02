@@ -6,7 +6,6 @@
 
 Kruskals::Kruskals(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>> gr) {
     g = gr;
-    V = num_vertices(g);
     cout << "Edges of Kruskal's MST are:" << endl;
     int weight = kruskalMST();
     cout << "Weight of Kruskals MST is " << weight << endl;
@@ -42,7 +41,7 @@ int Kruskals::kruskalMST() {
             cout << u << " - " << v << endl;
 
             // Update MST weight
-            mst_wt += index[source(*ei, g)];
+            mst_wt += get(edge_weight_t(),g,edge(u,v,g).first);
 
             // Merge two sets
             uf.Union(set_u, set_v);
