@@ -22,7 +22,7 @@ using namespace chrono;
 
 class GraphEngine {
 public:
-    GraphEngine(int,char**);
+    GraphEngine(string,string);
     void generateGraph();
     adjacency_list<listS, vecS, undirectedS>  readFile(string);
     void algTiming(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>>);
@@ -31,6 +31,8 @@ private:
     typedef boost::adjacency_list<listS, vecS,undirectedS,no_property,EdgeWeightProperty> Graph;
     void createGraphs();
     void recordStats(int nodes, int edges, int kruskal, int prim);
+    void outputPerformance(string, int, int);
+    Graph ReadFile(string p);
     string flag;
     string path;
 };

@@ -4,47 +4,37 @@
 
 #include "GraphEngine.h"
 
-GraphEngine::GraphEngine(int argc, char **argv) {
-    if (argc > 1) {
-        flag = argv[1];
-        path = argv[2];
-    } else {
+GraphEngine::GraphEngine(string output_modifier, string p) {
+    // Checking if path is empty or not
+    if (p == "") {
         path = "../data/graph/text/";
-        // Runs Python file
         createGraphs();
+    } else {
+        path = p;
     }
+
+    // Checking if output is empty or not
+    if (output_modifier == ""){
+        flag = "-f";
+    } else {
+        flag = output_modifier;
+    }
+
+    // Generating the graph
     generateGraph();
 }
 
 void GraphEngine::generateGraph() {
-    // Getting the number of graphs from the data section
-    using filesystem::directory_iterator;
-    ifstream inFile;
-
-       for(auto& i: directory_iterator(path)) {
-        // Create the path to the first graph
-        // Open the path
-        inFile.open(i.path());
-
-        // record all input and put it into a graph
-        string buffer = "";
-        getline(inFile, buffer, '\n');
-        Graph g;
-        while(inFile.good()) {
-            getline(inFile, buffer, ' ');
-            string edge1 = buffer;
-            getline(inFile, buffer, ' ');
-            string edge2 = buffer;
-            getline(inFile, buffer, '\n');
-            string weight = buffer.substr(0,buffer.size()-1);
-
-            if(edge1 != "")
-                add_edge(stoi(edge1), stoi(edge2), stoi(weight), g);
-            else
-                break;
+    if (path.back() == '/') {
+        using filesystem::directory_iterator;
+        for(auto& i: directory_iterator(path)){
+            Graph toTest = ReadFile(i.path());
+            algTiming(toTest);
         }
-        inFile.close();
-        algTiming(g);
+    }
+    else {
+        Graph toTest = ReadFile(path);
+        algTiming(toTest);
     }
 }
 
@@ -56,8 +46,9 @@ void GraphEngine::algTiming(adjacency_list<listS, vecS,undirectedS,no_property,p
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     kruskalTime = duration.count();
-    cout << "Kruskal's with " << num_vertices(g) << " verticies and " << num_edges(g) << " edges: " <<
-         kruskalTime << " microseconds" << endl;
+    int kruskalWeight = k.get_total_weight();
+    int kruskalEdges = k.get_total_edges();
+    outputPerformance("Kruskal", kruskalEdges, kruskalWeight);
 
     // times Prim's
     int primTime = 0;
@@ -66,10 +57,11 @@ void GraphEngine::algTiming(adjacency_list<listS, vecS,undirectedS,no_property,p
     stop = std::chrono::high_resolution_clock::now();
     duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     primTime = duration.count();
-    cout << "Prim's with " << num_vertices(g) << " verticies and " << num_edges(g) << " edges: " <<
-         primTime << " microseconds" << endl;
+    int primsWeight = p.get_total_weight();
+    int primsEdges = p.get_total_edges();
+    outputPerformance("Prims", primsEdges, primsWeight);     
 
-    // Writing to file
+    // Writing stats to file
     recordStats(num_vertices(g), num_edges(g), kruskalTime, primTime);
 }
 
@@ -88,10 +80,44 @@ void GraphEngine::createGraphs() {
     Py_Finalize();
 }
 
+GraphEngine::Graph GraphEngine::ReadFile(string p){
+    ifstream inFile;
+    inFile.open(p);
+    string buffer = "";
+    Graph g;
+    while(inFile.good()) {
+        getline(inFile, buffer, ' ');
+        string edge1 = buffer;
+        getline(inFile, buffer, ' ');
+        string edge2 = buffer;
+        getline(inFile, buffer, '\n');
+        string weight = buffer.substr(0,buffer.size()-1);
+        cout << weight << endl;
+
+        if (edge1 != ""){
+            add_edge(stoi(edge1), stoi(edge2), stoi(weight), g);
+        }
+        else {
+            break;
+        }
+    }
+
+    inFile.close();
+
+    return g;
+}
+
 
 void GraphEngine::recordStats(int nodes, int edges, int kruskal, int prim) {
     ofstream File_Writer;
+    
+    // writing to the csv file
     File_Writer.open("../data/timing/stats.csv", ios::app);
     File_Writer << nodes << "," << edges << "," << kruskal << "," << prim << "\n";
     File_Writer.close();
 }
+
+void GraphEngine::outputPerformance(string type, int total_edges, int total_weight){
+    cout << type << ": edges[" << total_edges << "] weight[" << total_weight << "]\n";
+}
+

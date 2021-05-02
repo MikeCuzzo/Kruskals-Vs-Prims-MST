@@ -19,6 +19,8 @@ public:
     void primMST();
     int minKey();
     void printMST();
+    int get_total_weight();
+    int get_total_edges();
 private:
     typedef property<boost::edge_weight_t, int> EdgeWeightProperty;
     typedef adjacency_list<listS, vecS,undirectedS,no_property,EdgeWeightProperty> Graph;
@@ -31,6 +33,8 @@ private:
     vector<int> key;
     // To represent set of vertices included in MST
     vector<bool> mstSet;
+    int total_edges;
+    int total_weight;
 };
 
 

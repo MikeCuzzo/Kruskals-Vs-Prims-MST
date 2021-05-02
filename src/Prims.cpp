@@ -9,6 +9,8 @@
 
 Prims::Prims(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>> gr) {
     g = gr;
+    total_edges = 0;
+    total_weight = 0;
     V = num_vertices(g);
 
     parent.reserve(V);
@@ -51,6 +53,9 @@ void Prims::primMST() {
             // Update the key only if graph[u][v] is smaller than key[v]
             if (edge(u,v,g).second && mstSet[v] == false && edge(u,v,g).second < key[v])
                 parent[v] = u, key[v] = edge(u,v,g).second;
+                total_edges += 1;
+                pair<Edge, bool> ed = boost::edge(u,v,g);
+                total_weight += get(boost::edge_weight_t(), g, ed.first);
         }
     }
 
@@ -82,4 +87,11 @@ void Prims::printMST() {
     cout <<"Edges of Prim's MST are:" << endl;
     for (int i = 1; i < V; i++)
         cout << parent[i] << " - " << i << endl;
+}
+
+int Prims::get_total_weight(){
+    return total_weight;
+}
+int Prims::get_total_edges(){
+    return total_edges;
 }

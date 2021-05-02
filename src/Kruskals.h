@@ -18,6 +18,8 @@ class Kruskals {
 public:
     Kruskals(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>>);
     int kruskalMST();
+    int get_total_weight();
+    int get_total_edges();
 private:
     typedef property<edge_weight_t, int> EdgeWeightProperty;
     typedef adjacency_list<listS, vecS,undirectedS,no_property,EdgeWeightProperty> Graph;
@@ -25,6 +27,8 @@ private:
     // first int is parent, second is rank
     vector<boost::tuple <int,int>> DisjointSets;
     int V;
+    int num_edges;
+    int total_weight;
 };
 
 

@@ -7,9 +7,10 @@
 Kruskals::Kruskals(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>> gr) {
     g = gr;
     V = num_vertices(g);
+    num_edges = 0;
+    total_weight = kruskalMST();
     cout << "Edges of Kruskal's MST are:" << endl;
-    int weight = kruskalMST();
-    cout << "Weight of Kruskals MST is " << weight << endl;
+    cout << "Weight of Kruskals MST is " << total_weight << endl;
 }
 
 int Kruskals::kruskalMST() {
@@ -38,8 +39,9 @@ int Kruskals::kruskalMST() {
         if (set_u != set_v)
         {
             // Current edge will be in the MST
-            // so print it
+            // so print it and add to the number of edges
             cout << u << " - " << v << endl;
+            num_edges += 1;
 
             // Update MST weight
             mst_wt += index[source(*ei, g)];
@@ -50,4 +52,10 @@ int Kruskals::kruskalMST() {
     }
 
     return mst_wt;
+}
+int Kruskals::get_total_weight(){
+    return total_weight;
+}
+int Kruskals::get_total_edges(){
+    return num_edges;
 }
