@@ -11,10 +11,12 @@ int main(int argc, char** argv) {
     string path = "";
 
     switch(argc) {
+        case 3:
+            path = argv[2];
+            output_modifier = argv[1];
+            break;
         case 2:
-            path = argv[1];
-        case 1:
-            output_modifier = argv[0];
+            output_modifier = argv[1];
             break;
         default:
             output_modifier = "-f";

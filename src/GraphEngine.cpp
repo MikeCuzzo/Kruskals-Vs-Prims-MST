@@ -92,7 +92,6 @@ GraphEngine::Graph GraphEngine::ReadFile(string p){
         string edge2 = buffer;
         getline(inFile, buffer, '\n');
         string weight = buffer.substr(0,buffer.size()-1);
-        cout << weight << endl;
 
         if (edge1 != ""){
             add_edge(stoi(edge1), stoi(edge2), stoi(weight), g);

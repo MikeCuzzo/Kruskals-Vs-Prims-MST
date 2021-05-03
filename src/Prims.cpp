@@ -53,14 +53,9 @@ void Prims::primMST() {
             // Update the key only if graph[u][v] is smaller than key[v]
             if (edge(u,v,g).second && mstSet[v] == false && edge(u,v,g).second < key[v])
                 parent[v] = u, key[v] = edge(u,v,g).second;
-                total_edges += 1;
-                pair<Edge, bool> ed = boost::edge(u,v,g);
-                total_weight += get(boost::edge_weight_t(), g, ed.first);
+            total_edges += 1;
         }
     }
-
-    // print the constructed MST
-    printMST();
 }
 
 // A utility function to find the vertex with
@@ -81,15 +76,10 @@ int Prims::minKey() {
     return min_index;
 }
 
-// A utility function to print the
-// constructed MST stored in parent[]
-void Prims::printMST() {
-    cout <<"Edges of Prim's MST are:" << endl;
-    for (int i = 1; i < V; i++)
-        cout << parent[i] << " - " << i << endl;
-}
-
 int Prims::get_total_weight(){
+    for (int i = 1; i < V; i++)
+        total_weight += get(edge_weight_t(), g, edge(i,parent[i],g).first);
+    
     return total_weight;
 }
 int Prims::get_total_edges(){
