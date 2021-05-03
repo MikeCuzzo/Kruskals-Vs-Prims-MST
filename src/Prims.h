@@ -33,7 +33,6 @@ private:
     // To represent set of vertices included in MST
     vector<bool> mstSet;
     int total_edges;
-    int total_weight;
 };
 
 

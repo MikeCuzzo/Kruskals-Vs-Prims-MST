@@ -9,7 +9,6 @@
 
 Prims::Prims(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>> gr) {
     g = gr;
-    total_weight = 0;
     V = num_vertices(g);
 
     parent.reserve(V);

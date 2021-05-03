@@ -1,1 +1,1 @@
-Kruskal: edges[26910] weight[14515315]
+Kruskal: edges[26910] weight[14492124]

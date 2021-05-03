@@ -1,1 +1,1 @@
-Prims: edges[47880] weight[19593122]
+Prims: edges[47880] weight[19810797]

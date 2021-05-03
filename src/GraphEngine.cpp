@@ -94,7 +94,7 @@ GraphEngine::Graph GraphEngine::ReadFile(string p){
         getline(inFile, buffer, '\n');
         string weight = buffer.substr(0,buffer.size()-1);
 
-        if (edge1 != ""){
+        if ((edge1 != "" ) || (edge2 != "") || (weight != "")){
             add_edge(stoi(edge1), stoi(edge2), stoi(weight), g);
         }
         else {
