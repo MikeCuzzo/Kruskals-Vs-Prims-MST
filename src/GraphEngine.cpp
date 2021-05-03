@@ -46,7 +46,7 @@ void GraphEngine::algTiming(adjacency_list<listS, vecS,undirectedS,no_property,p
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     kruskalTime = duration.count();
-    int kruskalWeight = k.get_total_weight();
+    long long kruskalWeight = k.get_total_weight();
     int kruskalEdges = k.get_total_edges();
     outputPerformance("Kruskal", kruskalEdges, kruskalWeight);
 
@@ -57,7 +57,7 @@ void GraphEngine::algTiming(adjacency_list<listS, vecS,undirectedS,no_property,p
     stop = std::chrono::high_resolution_clock::now();
     duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     primTime = duration.count();
-    int primsWeight = p.get_total_weight();
+    long long primsWeight = p.get_total_weight();
     int primsEdges = p.get_total_edges();
     outputPerformance("Prims", primsEdges, primsWeight);     
 
@@ -92,8 +92,7 @@ GraphEngine::Graph GraphEngine::ReadFile(string p){
         string edge2 = buffer;
         getline(inFile, buffer, '\n');
         string weight = buffer.substr(0,buffer.size()-1);
-        cout << weight << endl;
-
+        
         if (edge1 != ""){
             add_edge(stoi(edge1), stoi(edge2), stoi(weight), g);
         }
@@ -117,7 +116,7 @@ void GraphEngine::recordStats(int nodes, int edges, int kruskal, int prim) {
     File_Writer.close();
 }
 
-void GraphEngine::outputPerformance(string type, int total_edges, int total_weight){
+void GraphEngine::outputPerformance(string type, int total_edges, long long total_weight){
     cout << type << ": edges[" << total_edges << "] weight[" << total_weight << "]\n";
 }
 

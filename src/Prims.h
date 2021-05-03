@@ -18,7 +18,6 @@ public:
     Prims(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>>);
     void primMST();
     int minKey();
-    void printMST();
     int get_total_weight();
     int get_total_edges();
 private:

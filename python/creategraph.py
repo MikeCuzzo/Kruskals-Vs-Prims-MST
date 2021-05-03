@@ -63,7 +63,7 @@ class create_graphs:
                          "\nActual Density: " + str(float(100*(G.number_of_edges())/total_possible_edges)) + "%\n")
 
                 # Printing the stats about the completed graph
-                with open("../data/graph/rsc/generated-graph-stats-" + str(self.graph_stats_iterator) + ".txt", "w") as file:
+                with open("../data/graph/rsc/generated-graph-stats-" + str(self.graph_stats_iterator) + ".txt", "w+") as file:
                     file.write(output)
                 
                 # Incrementing the graph stats iterator
@@ -81,7 +81,7 @@ class create_graphs:
 
             # Check if this edge is added
             if r < density:
-                G.add_edge(possible_edges[i][0], possible_edges[i][1], weight=random.randint(0, 999999))
+                G.add_edge(possible_edges[i][0], possible_edges[i][1], weight=random.randint(50000, 999999))
                 possible_edges.remove(possible_edges[i])
                 i-=1
             
@@ -92,7 +92,7 @@ class create_graphs:
         G = nx.Graph()
         i = 0
         while i != len(nodes)-1:
-            G.add_edge(i, i+1, weight=random.randint(0, 999999))       
+            G.add_edge(i, i+1, weight=random.randint(50000, 999999))       
             i+=1
         
         return G
@@ -101,13 +101,7 @@ class create_graphs:
     def generate_graph_data(self):
         i = 0
         for graph in self.Graphs:
-            with open("../data/graph/text/graph" + str(i) + ".txt", "w") as file:
-                '''
-                output = str(list(graph.adjacency()))
-                output = output.replace(")", ")\n")
-                output = output.replace('},', '\n')
-                output = output.replace('{\'weight\':', '')
-                '''
+            with open("../data/graph/text/graph" + str(i) + ".txt", "w+") as file:
                 for u,v,data in graph.edges(data=True):
                     file.write(str(u) + " " + str(v)+ " " + str(data).replace('{\'weight\': ', '').replace('}', '') + "\n")
             i+=1
@@ -130,10 +124,6 @@ class create_graphs:
 
 if __name__ == "__main__":
     c = create_graphs()
-
-
-
-
 
 
 

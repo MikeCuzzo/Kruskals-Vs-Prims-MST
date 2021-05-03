@@ -29,9 +29,10 @@ public:
 private:
     typedef boost::property<boost::edge_weight_t, int> EdgeWeightProperty;
     typedef boost::adjacency_list<listS, vecS,undirectedS,no_property,EdgeWeightProperty> Graph;
+    void timeAlgorithm();
     void createGraphs();
     void recordStats(int nodes, int edges, int kruskal, int prim);
-    void outputPerformance(string, int, int);
+    void outputPerformance(string, int, long long);
     Graph ReadFile(string p);
     string flag;
     string path;
