@@ -121,7 +121,7 @@ void GraphEngine::outputPerformance(string type, int total_edges, int total_weig
     cout << type << ": edges[" << total_edges << "] weight[" << total_weight << "]\n";
     if (flag == "-f"){
         ofstream File_Writer;
-        string write_path = "../output/performance" + to_string(performance) + ".txt";
+        string write_path = "../output/" + type + to_string(performance) + ".txt";
         performance++;
         File_Writer.open(write_path.c_str(), fstream::out);
         File_Writer << type << ": edges[" << total_edges << "] weight[" << total_weight << "]\n";
