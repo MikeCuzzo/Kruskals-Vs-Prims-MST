@@ -35,6 +35,7 @@ private:
     Graph ReadFile(string p);
     string flag;
     string path;
+    int performance;
 };
 
 

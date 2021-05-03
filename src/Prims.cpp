@@ -9,7 +9,6 @@
 
 Prims::Prims(adjacency_list<listS, vecS,undirectedS,no_property,property<edge_weight_t, int>> gr) {
     g = gr;
-    total_edges = 0;
     total_weight = 0;
     V = num_vertices(g);
 
@@ -33,8 +32,7 @@ void Prims::primMST() {
 
 
     // The MST will have V vertices
-    for (int count = 0; count < V - 1; count++)
-    {
+    for (int count = 0; count < V - 1; count++){
         // Pick the minimum key vertex from the
         // set of vertices not yet included in MST
         int u = minKey();
@@ -47,13 +45,12 @@ void Prims::primMST() {
         // Consider only those vertices which are not
         // yet included in MST
         graph_traits<Graph>::edge_iterator ei, ei_end;
-        for (int v = 0; v < V; v++) {
+        for (int v = 0; v < V-1; v++) {
             // graph[u][v] is non zero only for adjacent vertices of m
             // mstSet[v] is false for vertices not yet included in MST
             // Update the key only if graph[u][v] is smaller than key[v]
             if (edge(u,v,g).second && mstSet[v] == false && edge(u,v,g).second < key[v]) {
                 parent[v] = u, key[v] = edge(u, v, g).second;
-                total_edges++;
             }
         }
     }
@@ -78,11 +75,13 @@ int Prims::minKey() {
 }
 
 int Prims::get_total_weight(){
-    for (int i = 1; i < V; i++)
+    int total_weight = 0;
+    for (int i = 1; i < V-2; i++)
         total_weight += get(edge_weight_t(), g, edge(i,parent[i],g).first);
 
     return total_weight;
 }
+
 int Prims::get_total_edges(){
-    return total_edges;
+    return num_edges(g);
 }

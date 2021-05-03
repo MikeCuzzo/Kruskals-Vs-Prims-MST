@@ -19,6 +19,7 @@ GraphEngine::GraphEngine(string output_modifier, string p) {
     } else {
         flag = output_modifier;
     }
+    performance = 0;
 
     // Generating the graph
     generateGraph();
@@ -118,5 +119,13 @@ void GraphEngine::recordStats(int nodes, int edges, int kruskal, int prim) {
 
 void GraphEngine::outputPerformance(string type, int total_edges, int total_weight){
     cout << type << ": edges[" << total_edges << "] weight[" << total_weight << "]\n";
+    if (flag == "-f"){
+        ofstream File_Writer;
+        string write_path = "../output/performance" + to_string(performance) + ".txt";
+        performance++;
+        File_Writer.open(write_path.c_str(), fstream::out);
+        File_Writer << type << ": edges[" << total_edges << "] weight[" << total_weight << "]\n";
+        File_Writer.close();
+    }
 }
 

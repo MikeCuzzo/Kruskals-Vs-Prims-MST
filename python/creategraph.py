@@ -63,7 +63,7 @@ class create_graphs:
                          "\nActual Density: " + str(float(100*(G.number_of_edges())/total_possible_edges)) + "%\n")
 
                 # Printing the stats about the completed graph
-                with open("../data/graph/rsc/generated-graph-stats-" + str(self.graph_stats_iterator) + ".txt", "w") as file:
+                with open("../output/graph-stats/generated-graph-stats-" + str(self.graph_stats_iterator) + ".txt", "w+") as file:
                     file.write(output)
                 
                 # Incrementing the graph stats iterator
@@ -81,7 +81,7 @@ class create_graphs:
 
             # Check if this edge is added
             if r < density:
-                G.add_edge(possible_edges[i][0], possible_edges[i][1])
+                G.add_edge(possible_edges[i][0], possible_edges[i][1], weight=random.randint(0, 999999))
                 possible_edges.remove(possible_edges[i])
                 i-=1
             
@@ -92,7 +92,7 @@ class create_graphs:
         G = nx.Graph()
         i = 0
         while i != len(nodes)-1:
-            G.add_edge(i, i+1)
+            G.add_edge(i, i+1, weight=random.randint(0, 999999))       
             i+=1
         
         return G
@@ -101,18 +101,14 @@ class create_graphs:
     def generate_graph_data(self):
         i = 0
         for graph in self.Graphs:
-            with open("../data/graph/text/graph" + str(i) + ".txt", "w") as file:
-                output = str(graph.edges())
-                output = output.replace(", (", "\n(")
-                output = output.replace('[', '')
-                output = output.replace(']', '')
-                file.write(str(graph.number_of_edges())+ "\n")
-                file.write(output)
+            with open("../data/graph/text/graph" + str(i) + ".txt", "w+") as file:
+                for u,v,data in graph.edges(data=True):
+                    file.write(str(u) + " " + str(v)+ " " + str(data).replace('{\'weight\': ', '').replace('}', '') + "\n")
             i+=1
     
     def generate_graph_visualization(self):
         i = 0
-        for root, dirs, files in os.walk('../data/graph/images/'):
+        for root, dirs, files in os.walk('../output/graph-images/'):
                 for f in files:
                     os.unlink(os.path.join(root, f))
                 for d in dirs:
@@ -120,21 +116,11 @@ class create_graphs:
                     
         for graph in self.Graphs:
             nx.draw(graph, with_labels=True)
-            plt.savefig("../data/graph/images/graph_visualization" + str(i) + ".png")
+            plt.savefig("../output/graph-images/graph_visualization" + str(i) + ".png")
             plt.close()
             i += 1
 
 
-
 if __name__ == "__main__":
     c = create_graphs()
-
-
-
-
-
-
-
-
-
 

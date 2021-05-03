@@ -26,7 +26,6 @@ private:
     Graph g;
     // first int is parent, second is rank
     vector<boost::tuple <int,int>> DisjointSets;
-    int num_edges;
     int total_weight;
 };
 

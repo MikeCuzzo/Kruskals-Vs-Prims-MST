@@ -1,0 +1,3 @@
+Total possible Edges: 79800
+Number of Edges: 47880
+Actual Density: 60.0%
